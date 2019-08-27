@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="./angular.js"></script>
+        <script src="./angular-route.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <div ng-app="demo">
+        <div ng-controller="firstNameController">
+            <input type="text" ng-model="firstName">
+            <input type="text" ng-model="secondName">
+
+            <pre>First Name:   {{firstName}}</pre>
+            <pre>Second Name:    {{secondName}}</pre>
+
+            <pre>FullName:     {{join( firstName , secondName )}}</pre>
+
+            <ol>
+                <li ng-repeat="indName in names">
+                    {{indName}}
+                </li>
+            </ol>
+        </div>
+
+        <div>
+            <ul>
+                <li><a href="#/addEvent">Add Event</a></li>
+                <li><a href="#/showEvent">Show Events</a></li>
+            </ul>
+            <div ng-view></div>
+        </div>
+    </div>
+</html>

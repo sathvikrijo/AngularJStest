@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta chrset="UTF 8">
+    <title>Event Registration</title>
+</head>
+
+<body>
+<script src="https://code.angularjs.org/1.6.9/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.6.9/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.6.9/angular.js"></script>
+<script src="/lib/bootstrap.js"></script>
+<script src="/lib/bootstrap.css"></script>
+<h1> Guru99 Global Event</h1>
+<form ng-app="DemoApp" ng-controller="DemoController" name="myForm" novalidate>
+    <p>Topic Name:<br>
+        <input type="text" name="user" ng-model="user" required>
+
+        <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+
+            <span ng-show="myForm.user.$error.required">Username is required</span>
+        </span>
+    </p>
+    <p>
+        <input type="submit" ng-disabled="myForm.user.$dirty && myForm.user.$invalid">
+    </p>
+</form>
+<script>
+    var app = angular.module("DemoApp",[]);
+
+    app.controller("DemoController",function($scope) {
+
+        $scope.Display = function () {
+            $scope.user='Angular';
+        }
+    });
+</script>
+</body>
+</html>
